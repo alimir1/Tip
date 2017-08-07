@@ -30,7 +30,7 @@ This is an initial submission. More features (along with the implementation of t
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://imgur.com/a096827' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+[Imgur](http://i.imgur.com/a096827.gifv)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -40,7 +40,7 @@ As part of your pre-work submission, please reflect on the app and answer the fo
 
 **Question 1**: "What are your reactions to the iOS app development platform so far? How would you describe outlets and actions to another developer? Bonus: any idea how they are being implemented under the hood? (It might give you some ideas if you right-click on the Storyboard and click Open As->Source Code")
 
-**Answer:** [Enter your answer here in a paragraph or two].
+**Answer:**
 I'm truly excited and feel satisfied with my progress. It’s very interesting how the source code for the Storyboard file is written in XML! I would describe actions and outlets to other developers as the following:
 - Both outlets and actions connect code to the UI (buttons, labels, images, etc)
 - Outlets connections are used for the appearance (color, opacity, position, etc)
@@ -50,7 +50,7 @@ Xcode makes it incredibly easy for the UI to communicate with code.
 
 Question 2: "Swift uses [Automatic Reference Counting](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID49) (ARC), which is not a garbage collector, to manage memory. Can you explain how you can get a strong reference cycle for closures? (There's a section explaining this concept in the link, how would you summarize as simply as possible?)"
 
-**Answer:** [Enter your answer here in a paragraph or two].
+**Answer:**
 
 Here's how I would summarize the concept:
 1. Reference types can create strong reference cycles
