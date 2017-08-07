@@ -47,7 +47,7 @@ class DisplayVC: UIViewController {
     func setupThemes(theme: Themes) {
         switch theme {
         case .dark:
-            view.backgroundColor = .black
+            view.backgroundColor = .gray
         case .light:
             view.backgroundColor = .white
         }
