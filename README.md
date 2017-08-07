@@ -30,7 +30,7 @@ This is an initial submission. More features (along with the implementation of t
 
 Here's a walkthrough of implemented user stories:
 
-[Imgur](http://i.imgur.com/a096827.gifv)
+<img src='http://i.imgur.com/a096827/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
