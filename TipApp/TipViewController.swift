@@ -14,7 +14,7 @@ class TipViewController: UIViewController {
     @IBOutlet weak var billAmountTextField: UITextField!
     
     var originalBillAmountViewCenterY = CGFloat()
-    
+    var originalBillDetailViewCenterY = CGFloat()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -24,6 +24,7 @@ class TipViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         originalBillAmountViewCenterY = billAmountView.center.y
+        originalBillDetailViewCenterY = billDetailView.center.y
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         billAmountTextField.becomeFirstResponder()
     }
@@ -35,13 +36,16 @@ class TipViewController: UIViewController {
     func layoutViews(isBillAmountEmpty: Bool) {
         if (isBillAmountEmpty) {
             UIView.animate(withDuration: 0.4) {
-                self.billAmountView.center.y = self.view.center.y
                 self.billDetailView.alpha = 0
+                self.billAmountView.center.y = self.view.center.y
+                self.billDetailView.center.y = self.billAmountView.center.y * 2
+                
             }
         } else {
             UIView.animate(withDuration: 0.4) {
-                self.billAmountView.center.y = self.originalBillAmountViewCenterY
                 self.billDetailView.alpha = 1
+                self.billAmountView.center.y = self.originalBillAmountViewCenterY
+                self.billDetailView.center.y = self.originalBillDetailViewCenterY
             }
         }
     }
