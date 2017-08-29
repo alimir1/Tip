@@ -10,12 +10,12 @@ import UIKit
 
 class DisplayVC: UIViewController {
 
-    var tapGestureRecognizer = UITapGestureRecognizer()
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var billSegmentedControl: UISegmentedControl!
     
+    var tapGestureRecognizer = UITapGestureRecognizer()
     let percentages: [Percentages] = [.low, .medium, .high]
     
     override func viewDidLoad() {
