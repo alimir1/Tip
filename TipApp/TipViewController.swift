@@ -21,12 +21,7 @@ class TipViewController: UIViewController {
     private var originalBillAmountViewCenterY = CGFloat()
     private var originalBillDetailViewCenterY = CGFloat()
     
-    private var tipPercentage = 20
-    private var billAmount = 0.00
-    private var tipAmount = 0.00
-    private var totalAmount = 0.00
-    private var numberOfPeople = 4
-    private var totAmountPerPerson = 0.00
+    var tip = Tip()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,43 +37,38 @@ class TipViewController: UIViewController {
     }
     
     @IBAction func amountChanged(_ sender: Any) {
-        billAmount = Double(billAmountTextField.text ?? "") ?? 0.0
+        tip.billAmount = Double(billAmountTextField.text ?? "") ?? 0.0
         updateDisplay()
     }
     
     @IBAction func increaseTipPercentage(_ sender: UIButton) {
-        if tipPercentage + 1 <= 100 {
-            tipPercentage += 1
-            calculateTip()
+        if tip.tipPercentage + 1 <= 100 {
+            tip.tipPercentage += 1
             updateLabels()
         }
     }
     
     @IBAction func decreaseTipPercentage(_ sender: UIButton) {
-        if tipPercentage - 1 >= 0 {
-            tipPercentage -= 1
-            calculateTip()
+        if tip.tipPercentage - 1 >= 0 {
+            tip.tipPercentage -= 1
             updateLabels()
         }
     }
     
     @IBAction func increaseNumPeople(_ sender: UIButton) {
-        numberOfPeople += 1
-        calculateTip()
+        tip.numPeopleSharing += 1
         updateLabels()
     }
     
     @IBAction func decreaseNumPeople(_ sender: UIButton) {
-        if numberOfPeople - 1 > 0 {
-            numberOfPeople -= 1
-            calculateTip()
+        if tip.numPeopleSharing - 1 > 0 {
+            tip.numPeopleSharing -= 1
             updateLabels()
         }
     }
     
     private func updateDisplay() {
         updateViewLayouts(isBillAmountEmpty: isBillAmountEmpty())
-        calculateTip()
         updateLabels()
     }
     
@@ -98,18 +88,12 @@ class TipViewController: UIViewController {
         }
     }
     
-    private func calculateTip() {
-        tipAmount = Double(tipPercentage)/100 * billAmount
-        totalAmount = tipAmount + billAmount
-        totAmountPerPerson = totalAmount/Double(numberOfPeople)
-    }
-    
     private func updateLabels() {
-        totalAmountLabel.text = String(format: "$%.2f", totalAmount)
-        tipAmountLabel.text = String(format: "$%.2f", tipAmount)
-        tipPercentageLabel.text = "\(tipPercentage)%"
-        numOfPeopleLabel.text = "\(numberOfPeople)"
-        totAmountPerPersonLabel.text = String(format: "$%.2f", totAmountPerPerson)
+        totalAmountLabel.text = String(format: "$%.2f", tip.totalAmount)
+        tipAmountLabel.text = String(format: "$%.2f", tip.tipAmount)
+        tipPercentageLabel.text = "\(tip.tipPercentage)%"
+        numOfPeopleLabel.text = "\(tip.numPeopleSharing)"
+        totAmountPerPersonLabel.text = String(format: "$%.2f", tip.totalAmountPerPerson)
     }
     
     @objc private func dismissKeyboard() {
