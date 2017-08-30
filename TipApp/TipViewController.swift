@@ -33,14 +33,12 @@ class TipViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        originalBillAmountViewCenterY = billAmountView.center.y
-        originalBillDetailViewCenterY = billDetailView.center.y
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         billAmountTextField.becomeFirstResponder()
         satisfactoryOptionButton.isSelected = true
         setExperienceButtonImages()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        setOriginalCenterValues()
+        setupNavigationController()
     }
     
     @IBAction func highlightExperience(_ sender: UIButton) {
@@ -140,12 +138,20 @@ class TipViewController: UIViewController {
         terribleOptionButton.setImage(#imageLiteral(resourceName: "UnfilledSad"), for: .normal)
     }
     
+    private func setupNavigationController() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    private func setOriginalCenterValues() {
+        originalBillAmountViewCenterY = billAmountView.center.y
+        originalBillDetailViewCenterY = billDetailView.center.y
+    }
+    
     private func updateSelectedButtonUI(_ button: UIButton) {
-        
         if !button.isSelected {
             button.isSelected = true
         }
-        
         if button == terribleOptionButton {
             satisfactoryOptionButton.isSelected = false
             excellentOptionButton.isSelected = false
@@ -164,42 +170,3 @@ class TipViewController: UIViewController {
         return billAmountTextField.text == "" || (billAmountTextField.text ?? "").ltrim(["$"]) == ""
     }
 }
-
-extension String {
-    
-    func ltrim(_ chars: Set<Character>) -> String {
-        if let index = self.characters.index(where: {!chars.contains($0)}) {
-            return self[index..<self.endIndex]
-        } else {
-            return ""
-        }
-    }
-    
-    // formatting text for currency textField
-    func currencyInputFormatting() -> String {
-        
-        var number: NSNumber!
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currencyAccounting
-        formatter.currencySymbol = "$"
-        formatter.maximumFractionDigits = 2
-        formatter.minimumFractionDigits = 2
-        
-        var amountWithPrefix = self
-        
-        // remove from String: "$", ".", ","
-        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
-        amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count), withTemplate: "")
-        
-        let double = (amountWithPrefix as NSString).doubleValue
-        number = NSNumber(value: (double / 100))
-        
-        // if first number is 0 or all numbers were deleted
-        guard number != 0 as NSNumber else {
-            return ""
-        }
-        
-        return formatter.string(from: number)!
-    }
-}
-
