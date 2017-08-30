@@ -35,6 +35,14 @@ final class Settings {
         return UserDefaults.standard.object(forKey: keywords.TERRIBLE_PERCENTAGE) as? Int ?? Settings.DEFAULT_TERRIBLE_PERCENTAGE
     }
     
+    func getLatestBillAmount() -> Double {
+        return UserDefaults.standard.object(forKey: keywords.LATEST_BILL_AMOUNT) as? Double ?? 0.0
+    }
+    
+    func getLatestSavedDate() -> NSDate? {
+        return UserDefaults.standard.object(forKey: keywords.LATEST_SAVED_DATE) as? NSDate
+    }
+    
     internal func incrementDefaultPercentage(of type: Experiences) {
         changeDefaultPercentage(of: type, incrementDecrementValue: 1)
     }
@@ -73,17 +81,30 @@ final class Settings {
         defaults.synchronize()
     }
     
+    func saveLatestBillAmnt(_ amount: Double) {
+        UserDefaults.standard.set(amount, forKey: keywords.LATEST_BILL_AMOUNT)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func saveCurrentDate() {
+        UserDefaults.standard.set(NSDate(), forKey: keywords.LATEST_SAVED_DATE)
+        UserDefaults.standard.synchronize()
+    }
+    
     internal func reset() {
         let defaults = UserDefaults.standard
         defaults.set(Settings.DEFAULT_EXCELLENT_PERCENTAGE, forKey: keywords.EXCELLENT_PERCENTAGE)
         defaults.set(Settings.DEFAULT_SATISFACTORY_PERCENTAGE, forKey: keywords.SATISFACTORY_PERCENTAGE)
         defaults.set(Settings.DEFAULT_TERRIBLE_PERCENTAGE, forKey: keywords.TERRIBLE_PERCENTAGE)
+        defaults.synchronize()
     }
     
     struct keywords {
         static let EXCELLENT_PERCENTAGE = "EXCELLENT_PERCENTAGE"
         static let SATISFACTORY_PERCENTAGE = "SATISFACTORY_PERCENTAGE"
         static let TERRIBLE_PERCENTAGE = "TERRIBLE_PERCENTAGE"
+        static let LATEST_BILL_AMOUNT = "LATEST_BILL_AMOUNT"
+        static let LATEST_SAVED_DATE = "LATEST_SAVED_DATE"
     }
     
 }

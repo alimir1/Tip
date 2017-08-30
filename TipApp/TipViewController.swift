@@ -34,8 +34,11 @@ class TipViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
-        billAmountTextField.becomeFirstResponder()
         satisfactoryOptionButton.isSelected = true
+        if !(tip.billAmount > 0) {
+            billAmountTextField.becomeFirstResponder()
+        }
+        billAmountTextField.text = tip.billAmount == 0.0 ? "" : "\(tip.billAmount)".currencyFormatting(number: tip.billAmount)
         setExperienceButtonImages()
         setOriginalCenterValues()
         setupNavigationController()
@@ -62,6 +65,7 @@ class TipViewController: UIViewController {
     @IBAction func amountChanged(_ sender: UITextField) {
         sender.text = sender.text?.currencyInputFormatting()
         tip.billAmount = (sender.text ?? "").decimalValueFromCurrency()
+        Settings.shared.saveLatestBillAmnt(tip.billAmount)
         updateDisplay()
     }
     

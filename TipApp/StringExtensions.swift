@@ -13,6 +13,15 @@ extension String {
         return Double(self.replacingOccurrences(of: "[^0-9.]", with: "", options: .regularExpression, range: nil)) ?? 0.0
     }
     
+    func currencyFormatting(number: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currencyAccounting
+        formatter.currencySymbol = "$"
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        return formatter.string(from: NSNumber(value: number))!
+    }
+    
     // formatting text for currency textField
     func currencyInputFormatting() -> String {
         

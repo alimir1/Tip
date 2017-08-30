@@ -26,18 +26,28 @@ class Tip {
         return totalAmount/Double(numPeopleSharing)
     }
     
-    init(billAmount: Double = 0.0, numPeopleSharing: Int = 4, selectedTipType: Experiences) {
+    init(billAmount: Double, numPeopleSharing: Int, defaultExperience: Experiences) {
         self.billAmount = billAmount
         self.numPeopleSharing = numPeopleSharing
-        self.selectedTipType = selectedTipType
+        self.selectedTipType = defaultExperience
         self.currentTipPercentage = Settings.shared.getDefaultSatisfactoryPercentage()
     }
     
     init(defaultExperience: Experiences) {
-        self.billAmount = 0.00
+        self.billAmount = 0.0
         self.numPeopleSharing = 4
         self.selectedTipType = defaultExperience
         self.currentTipPercentage = Settings.shared.getDefaultSatisfactoryPercentage()
+        setBillAmountFromLastSave()
+    }
+    
+    private func setBillAmountFromLastSave() {
+        guard let savedDate = Settings.shared.getLatestSavedDate() else { return }
+        let minsPassedSinceLastTerminate = abs(savedDate.timeIntervalSinceNow)/60
+        if (minsPassedSinceLastTerminate) <= 10.00 {
+            print("ISHRAQ: \(minsPassedSinceLastTerminate)")
+            self.billAmount = Settings.shared.getLatestBillAmount()
+        }
     }
     
     func getTipPercentage() -> Int {
