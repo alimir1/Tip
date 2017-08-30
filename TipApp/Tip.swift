@@ -11,7 +11,7 @@ import Foundation
 class Tip {
     var billAmount: Double
     var numPeopleSharing: Int
-    var selectedTipType: DefaultSettings
+    var selectedTipType: Experiences
     var currentTipPercentage: Int
     
     var tipAmount: Double {
@@ -26,17 +26,17 @@ class Tip {
         return totalAmount/Double(numPeopleSharing)
     }
     
-    init(billAmount: Double = 0.0, numPeopleSharing: Int = 4, selectedTipType: DefaultSettings) {
+    init(billAmount: Double = 0.0, numPeopleSharing: Int = 4, selectedTipType: Experiences) {
         self.billAmount = billAmount
         self.numPeopleSharing = numPeopleSharing
         self.selectedTipType = selectedTipType
         self.currentTipPercentage = Settings.shared.getDefaultSatisfactoryPercentage()
     }
     
-    init() {
+    init(defaultExperience: Experiences) {
         self.billAmount = 0.00
         self.numPeopleSharing = 4
-        self.selectedTipType = .satisfactory
+        self.selectedTipType = defaultExperience
         self.currentTipPercentage = Settings.shared.getDefaultSatisfactoryPercentage()
     }
     

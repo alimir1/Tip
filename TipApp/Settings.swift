@@ -9,7 +9,7 @@
 import Foundation
 
 
-enum DefaultSettings {
+enum Experiences {
     case excellent
     case satisfactory
     case terrible
@@ -35,15 +35,15 @@ final class Settings {
         return UserDefaults.standard.object(forKey: keywords.DEFAULT_TERRIBLE_PERCENTAGE) as? Int ?? Settings.DEFAULT_TERRIBLE_PERCENTAGE
     }
     
-    internal func incrementDefaultPercentage(of type: DefaultSettings) {
+    internal func incrementDefaultPercentage(of type: Experiences) {
         changeDefaultPercentage(of: type, incrementDecrementValue: 1)
     }
     
-    internal func decrementDefaultPercentage(of type: DefaultSettings) {
+    internal func decrementDefaultPercentage(of type: Experiences) {
         changeDefaultPercentage(of: type, incrementDecrementValue: -1)
     }
     
-    private func changeDefaultPercentage(of type: DefaultSettings, incrementDecrementValue value: Int) {
+    private func changeDefaultPercentage(of type: Experiences, incrementDecrementValue value: Int) {
         switch type {
         case .excellent:
             if getDefaultExcellentPercentage() + value > 0 && getDefaultExcellentPercentage() + value <= 100 {
@@ -60,7 +60,7 @@ final class Settings {
         }
     }
     
-    private func changeDefaultPercentage(of type: DefaultSettings, percentage: Int) {
+    private func changeDefaultPercentage(of type: Experiences, percentage: Int) {
         let defaults = UserDefaults.standard
         switch type {
         case .excellent:

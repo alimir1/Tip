@@ -24,7 +24,7 @@ class TipViewController: UIViewController {
     private var originalBillAmountViewCenterY = CGFloat()
     private var originalBillDetailViewCenterY = CGFloat()
     
-    var tip = Tip()
+    var tip = Tip(defaultExperience: .satisfactory)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,22 +37,19 @@ class TipViewController: UIViewController {
         originalBillDetailViewCenterY = billDetailView.center.y
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         billAmountTextField.becomeFirstResponder()
-        satisfactoryOptionButton.isHighlighted = true
+        satisfactoryOptionButton.isSelected = true
     }
     
     @IBAction func highlightExperience(_ sender: UIButton) {
+        updateButtonUI(sender)
         switch sender.tag {
         case 0:
-            satisfactoryOptionButton.isHighlighted = false
-            terribleOptionButton.isHighlighted = true
             tip.selectedTipType = .terrible
             tip.resetTipPercentage()
         case 1:
-            satisfactoryOptionButton.isHighlighted = true
             tip.selectedTipType = .satisfactory
             tip.resetTipPercentage()
         case 2:
-            excellentOptionButton.isHighlighted = true
             tip.selectedTipType = .excellent
             tip.resetTipPercentage()
         default:
@@ -124,6 +121,26 @@ class TipViewController: UIViewController {
     @objc private func dismissKeyboard() {
         if (!isBillAmountEmpty()) {
             self.view.endEditing(true)
+        }
+    }
+    
+    private func updateButtonUI(_ button: UIButton) {
+        
+        if !button.isSelected {
+            button.isSelected = true
+        }
+        
+        if button == terribleOptionButton {
+            satisfactoryOptionButton.isSelected = false
+            excellentOptionButton.isSelected = false
+        } else if button == satisfactoryOptionButton {
+            terribleOptionButton.isSelected = false
+            excellentOptionButton.isSelected = false
+        } else if button == excellentOptionButton {
+            satisfactoryOptionButton.isSelected = false
+            terribleOptionButton.isSelected = false
+        } else {
+            return
         }
     }
     
