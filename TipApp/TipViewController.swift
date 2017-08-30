@@ -17,6 +17,9 @@ class TipViewController: UIViewController {
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var numOfPeopleLabel: UILabel!
     @IBOutlet weak var totAmountPerPersonLabel: UILabel!
+    @IBOutlet weak var terribleOptionButton: UIButton!
+    @IBOutlet weak var satisfactoryOptionButton: UIButton!
+    @IBOutlet weak var excellentOptionButton: UIButton!
     
     private var originalBillAmountViewCenterY = CGFloat()
     private var originalBillDetailViewCenterY = CGFloat()
@@ -25,7 +28,6 @@ class TipViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tip.tipPercentage = Settings.shared.getDefaultSatisfactoryPercentage()
         updateDisplay()
     }
     
@@ -35,6 +37,28 @@ class TipViewController: UIViewController {
         originalBillDetailViewCenterY = billDetailView.center.y
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         billAmountTextField.becomeFirstResponder()
+        satisfactoryOptionButton.isHighlighted = true
+    }
+    
+    @IBAction func highlightExperience(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            satisfactoryOptionButton.isHighlighted = false
+            terribleOptionButton.isHighlighted = true
+            tip.selectedTipType = .terrible
+            tip.resetTipPercentage()
+        case 1:
+            satisfactoryOptionButton.isHighlighted = true
+            tip.selectedTipType = .satisfactory
+            tip.resetTipPercentage()
+        case 2:
+            excellentOptionButton.isHighlighted = true
+            tip.selectedTipType = .excellent
+            tip.resetTipPercentage()
+        default:
+            break
+        }
+        updateLabels()
     }
     
     @IBAction func amountChanged(_ sender: Any) {
@@ -43,15 +67,15 @@ class TipViewController: UIViewController {
     }
     
     @IBAction func increaseTipPercentage(_ sender: UIButton) {
-        if tip.tipPercentage + 1 <= 100 {
-            tip.tipPercentage += 1
+        if tip.currentTipPercentage + 1 <= 100 {
+            tip.currentTipPercentage += 1
             updateLabels()
         }
     }
     
     @IBAction func decreaseTipPercentage(_ sender: UIButton) {
-        if tip.tipPercentage - 1 > 0 {
-            tip.tipPercentage -= 1
+        if tip.currentTipPercentage - 1 > 0 {
+            tip.currentTipPercentage -= 1
             updateLabels()
         }
     }
@@ -92,7 +116,7 @@ class TipViewController: UIViewController {
     private func updateLabels() {
         totalAmountLabel.text = String(format: "$%.2f", tip.totalAmount)
         tipAmountLabel.text = String(format: "$%.2f", tip.tipAmount)
-        tipPercentageLabel.text = "\(tip.tipPercentage)%"
+        tipPercentageLabel.text = "\(tip.currentTipPercentage)%"
         numOfPeopleLabel.text = "\(tip.numPeopleSharing)"
         totAmountPerPersonLabel.text = String(format: "$%.2f", tip.totalAmountPerPerson)
     }

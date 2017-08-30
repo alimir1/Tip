@@ -163,16 +163,25 @@
                                         <rect key="frame" x="40" y="57" width="53" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Terrible"/>
+                                        <connections>
+                                            <action selector="highlightExperience:" destination="FE3-rH-n7B" eventType="touchUpInside" id="TxT-IE-eOC"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qi-Jd-AX6">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qi-Jd-AX6">
                                         <rect key="frame" x="146" y="57" width="83" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Satisfactory"/>
+                                        <connections>
+                                            <action selector="highlightExperience:" destination="FE3-rH-n7B" eventType="touchUpInside" id="w6c-JX-HO0"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ro4-wm-VEm">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ro4-wm-VEm">
                                         <rect key="frame" x="270" y="57" width="62" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Excellent"/>
+                                        <connections>
+                                            <action selector="highlightExperience:" destination="FE3-rH-n7B" eventType="touchUpInside" id="AkQ-jg-anY"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="dRO-AT-nOF">
                                         <rect key="frame" x="28" y="124" width="72" height="48"/>
@@ -293,7 +302,10 @@
                         <outlet property="billAmountTextField" destination="qSd-dh-TFa" id="w7P-k1-PJN"/>
                         <outlet property="billAmountView" destination="lTx-vK-XUg" id="4Cg-cf-Efa"/>
                         <outlet property="billDetailView" destination="SXR-vj-fOI" id="31S-D0-L35"/>
+                        <outlet property="excellentOptionButton" destination="ro4-wm-VEm" id="o7o-Pz-UOC"/>
                         <outlet property="numOfPeopleLabel" destination="RCJ-0n-Vgh" id="r6I-Zg-Icg"/>
+                        <outlet property="satisfactoryOptionButton" destination="7qi-Jd-AX6" id="3AF-bF-hkU"/>
+                        <outlet property="terribleOptionButton" destination="S88-BZ-qfK" id="xUi-sF-GjK"/>
                         <outlet property="tipAmountLabel" destination="7M2-8B-Uy8" id="EFD-lS-IGJ"/>
                         <outlet property="tipPercentageLabel" destination="dRO-AT-nOF" id="KRW-sr-89C"/>
                         <outlet property="totAmountPerPersonLabel" destination="Ewy-BX-YYJ" id="6pE-I8-dyJ"/>
