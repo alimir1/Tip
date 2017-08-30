@@ -4,7 +4,7 @@
 
 Submitted by: **Ali Mir**
 
-Time spent: **10** hours spent in total
+Time spent: **12** hours spent in total
 
 ## User Stories
 
