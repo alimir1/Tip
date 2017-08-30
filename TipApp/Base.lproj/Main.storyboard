@@ -302,9 +302,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqa-wu-miv">
-                                <rect key="frame" x="168" y="460" width="39" height="30"/>
+                                <rect key="frame" x="16" y="460" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset"/>
+                                <color key="backgroundColor" red="1" green="0.28029202180000001" blue="0.2704542224" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Reset to Defaults">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="resetWithSender:" destination="IZN-GC-SzH" eventType="touchUpInside" id="ivH-0Y-Y6A"/>
                                 </connections>
@@ -320,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJ3-W1-T2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3830" y="226"/>
+            <point key="canvasLocation" x="3829.5999999999999" y="225.33733133433284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vHL-CD-fw1">
