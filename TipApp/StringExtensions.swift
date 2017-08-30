@@ -9,14 +9,6 @@
 import Foundation
 
 extension String {
-    
-//    func ltrim(_ chars: Set<Character>) -> String {
-//        if let index = self.characters.index(where: {!chars.contains($0)}) {
-//            return self[index..<self.endIndex]
-//        } else {
-//            return ""
-//        }
-//    }
     func decimalValueFromCurrency() -> Double {
         return Double(self.replacingOccurrences(of: "[^0-9.]", with: "", options: .regularExpression, range: nil)) ?? 0.0
     }
