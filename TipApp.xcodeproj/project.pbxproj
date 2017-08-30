@@ -11,6 +11,7 @@
 		494ECD0D1F55FB78002BF760 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494ECD0C1F55FB78002BF760 /* TipViewController.swift */; };
 		494ECD0F1F56306B002BF760 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494ECD0E1F56306B002BF760 /* Tip.swift */; };
 		494ECD111F56355E002BF760 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494ECD101F56355E002BF760 /* SettingsViewController.swift */; };
+		494ECD131F563A09002BF760 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494ECD121F563A09002BF760 /* Settings.swift */; };
 		4951AC9E1F37B07800AE8A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951AC9D1F37B07800AE8A94 /* AppDelegate.swift */; };
 		4951ACA01F37B07800AE8A94 /* DisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951AC9F1F37B07800AE8A94 /* DisplayVC.swift */; };
 		4951ACA31F37B07800AE8A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4951ACA11F37B07800AE8A94 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		494ECD0C1F55FB78002BF760 /* TipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		494ECD0E1F56306B002BF760 /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		494ECD101F56355E002BF760 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		494ECD121F563A09002BF760 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4951AC9A1F37B07800AE8A94 /* TipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4951AC9D1F37B07800AE8A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4951AC9F1F37B07800AE8A94 /* DisplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayVC.swift; sourceTree = "<group>"; };
@@ -73,12 +75,13 @@
 			children = (
 				4951AC9D1F37B07800AE8A94 /* AppDelegate.swift */,
 				4951AC9F1F37B07800AE8A94 /* DisplayVC.swift */,
-				494ECD0C1F55FB78002BF760 /* TipViewController.swift */,
 				4951ACAF1F37E98500AE8A94 /* SettingsVC.swift */,
 				4951ACB11F38F8D900AE8A94 /* Model.swift */,
-				494ECD0E1F56306B002BF760 /* Tip.swift */,
 				4951ACA11F37B07800AE8A94 /* Main.storyboard */,
+				494ECD0C1F55FB78002BF760 /* TipViewController.swift */,
+				494ECD0E1F56306B002BF760 /* Tip.swift */,
 				494ECD101F56355E002BF760 /* SettingsViewController.swift */,
+				494ECD121F563A09002BF760 /* Settings.swift */,
 				4951ACA41F37B07800AE8A94 /* Assets.xcassets */,
 				4951ACA61F37B07800AE8A94 /* LaunchScreen.storyboard */,
 				4951ACA91F37B07800AE8A94 /* Info.plist */,
@@ -229,6 +232,7 @@
 			files = (
 				4951ACA01F37B07800AE8A94 /* DisplayVC.swift in Sources */,
 				4951AC9E1F37B07800AE8A94 /* AppDelegate.swift in Sources */,
+				494ECD131F563A09002BF760 /* Settings.swift in Sources */,
 				494ECD111F56355E002BF760 /* SettingsViewController.swift in Sources */,
 				4951ACB01F37E98500AE8A94 /* SettingsVC.swift in Sources */,
 				494ECD0F1F56306B002BF760 /* Tip.swift in Sources */,

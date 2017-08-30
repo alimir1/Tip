@@ -25,9 +25,10 @@ class TipViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tip.tipPercentage = Settings.shared.getDefaultSatisfactoryPercentage()
         updateDisplay()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         originalBillAmountViewCenterY = billAmountView.center.y
@@ -49,7 +50,7 @@ class TipViewController: UIViewController {
     }
     
     @IBAction func decreaseTipPercentage(_ sender: UIButton) {
-        if tip.tipPercentage - 1 >= 0 {
+        if tip.tipPercentage - 1 > 0 {
             tip.tipPercentage -= 1
             updateLabels()
         }
