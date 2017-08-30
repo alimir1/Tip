@@ -13,12 +13,9 @@
 		494ECD111F56355E002BF760 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494ECD101F56355E002BF760 /* SettingsViewController.swift */; };
 		494ECD131F563A09002BF760 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494ECD121F563A09002BF760 /* Settings.swift */; };
 		4951AC9E1F37B07800AE8A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951AC9D1F37B07800AE8A94 /* AppDelegate.swift */; };
-		4951ACA01F37B07800AE8A94 /* DisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951AC9F1F37B07800AE8A94 /* DisplayVC.swift */; };
 		4951ACA31F37B07800AE8A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4951ACA11F37B07800AE8A94 /* Main.storyboard */; };
 		4951ACA51F37B07800AE8A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4951ACA41F37B07800AE8A94 /* Assets.xcassets */; };
 		4951ACA81F37B07800AE8A94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4951ACA61F37B07800AE8A94 /* LaunchScreen.storyboard */; };
-		4951ACB01F37E98500AE8A94 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951ACAF1F37E98500AE8A94 /* SettingsVC.swift */; };
-		4951ACB21F38F8D900AE8A94 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951ACB11F38F8D900AE8A94 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,13 +26,10 @@
 		494ECD121F563A09002BF760 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4951AC9A1F37B07800AE8A94 /* TipApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4951AC9D1F37B07800AE8A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4951AC9F1F37B07800AE8A94 /* DisplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayVC.swift; sourceTree = "<group>"; };
 		4951ACA21F37B07800AE8A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4951ACA41F37B07800AE8A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4951ACA71F37B07800AE8A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4951ACA91F37B07800AE8A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4951ACAF1F37E98500AE8A94 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		4951ACB11F38F8D900AE8A94 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BA19AA0361066F7FAB21A5BB /* Pods_TipApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5CD92E0FCDE5B700D24791 /* Pods-TipApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipApp/Pods-TipApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,14 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				4951AC9D1F37B07800AE8A94 /* AppDelegate.swift */,
-				4951AC9F1F37B07800AE8A94 /* DisplayVC.swift */,
-				4951ACAF1F37E98500AE8A94 /* SettingsVC.swift */,
-				4951ACB11F38F8D900AE8A94 /* Model.swift */,
-				4951ACA11F37B07800AE8A94 /* Main.storyboard */,
 				494ECD0C1F55FB78002BF760 /* TipViewController.swift */,
 				494ECD0E1F56306B002BF760 /* Tip.swift */,
 				494ECD101F56355E002BF760 /* SettingsViewController.swift */,
 				494ECD121F563A09002BF760 /* Settings.swift */,
+				4951ACA11F37B07800AE8A94 /* Main.storyboard */,
 				4951ACA41F37B07800AE8A94 /* Assets.xcassets */,
 				4951ACA61F37B07800AE8A94 /* LaunchScreen.storyboard */,
 				4951ACA91F37B07800AE8A94 /* Info.plist */,
@@ -230,14 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4951ACA01F37B07800AE8A94 /* DisplayVC.swift in Sources */,
 				4951AC9E1F37B07800AE8A94 /* AppDelegate.swift in Sources */,
 				494ECD131F563A09002BF760 /* Settings.swift in Sources */,
 				494ECD111F56355E002BF760 /* SettingsViewController.swift in Sources */,
-				4951ACB01F37E98500AE8A94 /* SettingsVC.swift in Sources */,
 				494ECD0F1F56306B002BF760 /* Tip.swift in Sources */,
 				494ECD0D1F55FB78002BF760 /* TipViewController.swift in Sources */,
-				4951ACB21F38F8D900AE8A94 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
