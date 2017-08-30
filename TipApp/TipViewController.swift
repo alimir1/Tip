@@ -38,10 +38,11 @@ class TipViewController: UIViewController {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         billAmountTextField.becomeFirstResponder()
         satisfactoryOptionButton.isSelected = true
+        setExperienceButtonImages()
     }
     
     @IBAction func highlightExperience(_ sender: UIButton) {
-        updateButtonUI(sender)
+        updateSelectedButtonUI(sender)
         switch sender.tag {
         case 0:
             tip.selectedTipType = .terrible
@@ -124,7 +125,16 @@ class TipViewController: UIViewController {
         }
     }
     
-    private func updateButtonUI(_ button: UIButton) {
+    private func setExperienceButtonImages() {
+        satisfactoryOptionButton.setImage(#imageLiteral(resourceName: "FilledHappy"), for: .selected)
+        satisfactoryOptionButton.setImage(#imageLiteral(resourceName: "UnfilledHappy"), for: .normal)
+        excellentOptionButton.setImage(#imageLiteral(resourceName: "FilledExcited"), for: .selected)
+        excellentOptionButton.setImage(#imageLiteral(resourceName: "UnfilledExcited"), for: .normal)
+        terribleOptionButton.setImage(#imageLiteral(resourceName: "FilledSad"), for: .selected)
+        terribleOptionButton.setImage(#imageLiteral(resourceName: "UnfilledSad"), for: .normal)
+    }
+    
+    private func updateSelectedButtonUI(_ button: UIButton) {
         
         if !button.isSelected {
             button.isSelected = true
