@@ -39,6 +39,8 @@ class TipViewController: UIViewController {
         billAmountTextField.becomeFirstResponder()
         satisfactoryOptionButton.isSelected = true
         setExperienceButtonImages()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     @IBAction func highlightExperience(_ sender: UIButton) {
