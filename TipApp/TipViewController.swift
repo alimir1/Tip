@@ -60,10 +60,8 @@ class TipViewController: UIViewController {
     }
     
     @IBAction func amountChanged(_ sender: UITextField) {
-        if let amountString = sender.text?.currencyInputFormatting() {
-            sender.text = amountString
-        }
-        tip.billAmount = Double((sender.text ?? "").ltrim(["$"])) ?? 0.0
+        sender.text = sender.text?.currencyInputFormatting()
+        tip.billAmount = (sender.text ?? "").decimalValueFromCurrency()
         updateDisplay()
     }
     
@@ -167,6 +165,6 @@ class TipViewController: UIViewController {
     }
     
     private func isBillAmountEmpty() -> Bool {
-        return billAmountTextField.text == "" || (billAmountTextField.text ?? "").ltrim(["$"]) == ""
+        return billAmountTextField.text == "" || (billAmountTextField.text ?? "").decimalValueFromCurrency() == 0.0
     }
 }
