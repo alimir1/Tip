@@ -24,15 +24,15 @@ final class Settings {
     private init() {}
     
     func getDefaultExcellentPercentage() -> Int {
-        return UserDefaults.standard.object(forKey: keywords.DEFAULT_EXCELLENT_PERCENTAGE) as? Int ?? Settings.DEFAULT_EXCELLENT_PERCENTAGE
+        return UserDefaults.standard.object(forKey: keywords.EXCELLENT_PERCENTAGE) as? Int ?? Settings.DEFAULT_EXCELLENT_PERCENTAGE
     }
     
     func getDefaultSatisfactoryPercentage() -> Int {
-        return UserDefaults.standard.object(forKey: keywords.DEFAULT_SATISFACTORY_PERCENTAGE) as? Int ?? Settings.DEFAULT_SATISFACTORY_PERCENTAGE
+        return UserDefaults.standard.object(forKey: keywords.SATISFACTORY_PERCENTAGE) as? Int ?? Settings.DEFAULT_SATISFACTORY_PERCENTAGE
     }
     
     func getDefaultTerriblePercentage() -> Int {
-        return UserDefaults.standard.object(forKey: keywords.DEFAULT_TERRIBLE_PERCENTAGE) as? Int ?? Settings.DEFAULT_TERRIBLE_PERCENTAGE
+        return UserDefaults.standard.object(forKey: keywords.TERRIBLE_PERCENTAGE) as? Int ?? Settings.DEFAULT_TERRIBLE_PERCENTAGE
     }
     
     internal func incrementDefaultPercentage(of type: Experiences) {
@@ -64,26 +64,26 @@ final class Settings {
         let defaults = UserDefaults.standard
         switch type {
         case .excellent:
-            defaults.set(percentage, forKey: keywords.DEFAULT_EXCELLENT_PERCENTAGE)
+            defaults.set(percentage, forKey: keywords.EXCELLENT_PERCENTAGE)
         case .satisfactory:
-            defaults.set(percentage, forKey: keywords.DEFAULT_SATISFACTORY_PERCENTAGE)
+            defaults.set(percentage, forKey: keywords.SATISFACTORY_PERCENTAGE)
         case .terrible:
-            defaults.set(percentage, forKey: keywords.DEFAULT_TERRIBLE_PERCENTAGE)
+            defaults.set(percentage, forKey: keywords.TERRIBLE_PERCENTAGE)
         }
         defaults.synchronize()
     }
     
     internal func reset() {
         let defaults = UserDefaults.standard
-        defaults.set(Settings.DEFAULT_EXCELLENT_PERCENTAGE, forKey: keywords.DEFAULT_EXCELLENT_PERCENTAGE)
-        defaults.set(Settings.DEFAULT_SATISFACTORY_PERCENTAGE, forKey: keywords.DEFAULT_SATISFACTORY_PERCENTAGE)
-        defaults.set(Settings.DEFAULT_TERRIBLE_PERCENTAGE, forKey: keywords.DEFAULT_TERRIBLE_PERCENTAGE)
+        defaults.set(Settings.DEFAULT_EXCELLENT_PERCENTAGE, forKey: keywords.EXCELLENT_PERCENTAGE)
+        defaults.set(Settings.DEFAULT_SATISFACTORY_PERCENTAGE, forKey: keywords.SATISFACTORY_PERCENTAGE)
+        defaults.set(Settings.DEFAULT_TERRIBLE_PERCENTAGE, forKey: keywords.TERRIBLE_PERCENTAGE)
     }
     
     struct keywords {
-        static let DEFAULT_EXCELLENT_PERCENTAGE = "DEFAULT_EXCELLENT_PERCENTAGE"
-        static let DEFAULT_SATISFACTORY_PERCENTAGE = "DEFAULT_SATISFACTORY_PERCENTAGE"
-        static let DEFAULT_TERRIBLE_PERCENTAGE = "DEFAULT_TERRIBLE_PERCENTAGE"
+        static let EXCELLENT_PERCENTAGE = "EXCELLENT_PERCENTAGE"
+        static let SATISFACTORY_PERCENTAGE = "SATISFACTORY_PERCENTAGE"
+        static let TERRIBLE_PERCENTAGE = "TERRIBLE_PERCENTAGE"
     }
     
 }
