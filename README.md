@@ -28,6 +28,8 @@ The following **additional** features are implemented:
 - Use AutoLayout to satisfy multiple screen sizes
 - There should be a better way to handle SettingsViewController (instead of using a singleton)
 - Perhaps modify Tip class and add another class to split responsibilities
+- Display a warning to user before actually resetting to defaults
+- Notify user (some how) when changing default values
 
 ## Video Walkthrough 
 
