@@ -9,12 +9,12 @@
 * [x] Remembering the bill amount across app restarts (if <10mins)
 * [x] Using locale-specific currency and currency thousands separators.
 * [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
-- [x] Split between people
-- [x] Customize default percentages depending on experiences (terrible, satisfactory, excellent)
-- [x] Resets to defaults settings
-- [x] Launch screen
-- [x] UI/UX design (simple)
-- [x] Clears all textFields and labels when bill is empty (or zero)
+* [x] Split between people
+* [x] Customize default percentages depending on experiences (terrible, satisfactory, excellent)
+* [x] Resets to defaults settings
+* [x] Launch screen
+* [x] UI/UX design (simple)
+* [x] Clears all textFields and labels when bill is empty (or zero)
 
 ## Things to Improve
 - Use AutoLayout to satisfy multiple screen sizes
